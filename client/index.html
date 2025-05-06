@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="./style.css">
+</head>
+
+<style>
+
+
+.your-posts-section{
+   padding: 50px 0;
+}
+
+   .your-posts-section__title{
+      text-align: center;
+   }
+   .posts{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 30px;
+   }
+   .post{
+      position: relative;
+      padding: 40px;
+      border: 1px solid black;
+      border-radius: 5px;
+   }
+
+   .post__paragraph{
+      max-height: 100px;
+      overflow-y: auto;
+   }
+
+   .post__delete-btn{
+      cursor: pointer;
+      position: absolute;
+      inset-block-start: 5%;
+      inset-inline-end: 5%;
+
+      background-color: red;
+      color: white;
+
+      border: none;
+
+      padding: 4px 10px;
+
+      border-radius: 2.5px;
+
+      transition: all 0.3s ease  0s;
+   }
+
+   .post__delete-btn:hover{
+      opacity: 0.6;
+   }
+
+   .your-posts-section__create-a-post-form{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+   }
+
+   .create-a-post-form__title{
+      margin: 0;
+   }
+</style>
+<script src="./script.js" defer></script>
+
+<body >
+   <section class="your-posts-section">
+      <form action="" class="your-posts-section__create-a-post-form create-a-post-form" id="create-a-post-form">
+         <h3 class="create-a-post-form__title">create a new post</h3>
+         <input type="text" id="title-input" placeholder="post title">
+         <textarea type="text" id="content-textarea" placeholder="post content "></textarea>
+         <button>create a post</button>
+      </form>
+
+      <h2 class="your-posts-section__title">посты с сервера</h2>
+
+      <div class="posts">
+         
+      </div>
+   </section>
+   
+   
+</body>
+<template id="post-template">
+   <div class="post" data-post-id="">
+      <button class="post__delete-btn">X</button>
+      <h4 class="post__title" >
+
+      </h4>
+      <p class="post__paragraph">
+
+      </p>
+   </div>
+</template>
+</html>
